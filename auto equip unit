@@ -1,0 +1,12 @@
+local player = game.Players.LocalPlayer
+local backpack = player:WaitForChild("Backpack")
+
+-- Tìm vật phẩm trong ServerStorage hoặc một nơi lưu trữ khác
+local itemName = "Sword"  -- Thay thế bằng tên vật phẩm bạn muốn trang bị
+local item = game.ServerStorage:FindFirstChild(itemName)
+
+if item then
+    item:Clone().Parent = backpack
+else
+    warn("Item not found in ServerStorage!")
+end
